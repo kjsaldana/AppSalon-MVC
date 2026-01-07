@@ -1,3 +1,15 @@
+FROM node:20 AS frontend
+WORKDIR /app
+
+COPY package*.json ./
+
+RUN npm install
+
+COPY . .
+
+RUN npm run build
+
+
 FROM php:8.4-apache
 
 RUN apt-get update && apt-get install -y \
@@ -11,6 +23,8 @@ COPY composer.json composer.lock ./
 RUN composer install --no-dev --optimize-autoloader --no-interaction
 
 COPY . /var/www/html/
+
+COPY --from=frontend /app/public/build /var/www/html/public/build
 
 ENV APACHE_DOCUMENT_ROOT /var/www/html/public
 

@@ -19,9 +19,8 @@ class Router
 
     public function comprobarRutas()
     {
-        // Proteger Rutas...
         session_start();
-        // Arreglo de rutas protegidas...
+
         $rutas_usuario = ['/citas', 'api/servicios', 'api/citas'];
         $rutas_admin = ['/admin', '/servicios', '/servicios/crear', '/servicios/actualizar', '/servicios/eliminar'];
         $currentUrl = strtok($_SERVER['REQUEST_URI'], '?') ?? '/';
