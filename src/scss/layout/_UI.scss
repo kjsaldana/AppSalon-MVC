@@ -2,23 +2,24 @@
 @use '../base/mixins' as m;
 
 
-.contenedor-principal{
-    @include m.tablet{
+.contenedor-principal {
+    @include m.tablet {
         display: grid;
         grid-template-columns: 2fr 1.7fr;
         min-height: 100vh;
     }
 }
 
-.imagen{
+.imagen {
     background-image: url('/build/img/1.webp'), url('/build/img/1.jpg');
     background-size: cover;
     background-position: center center;
-    
-    @include m.tablet{
+
+    @include m.tablet {
         height: auto;
     }
-    &::after{
+
+    &::after {
         background: inherit;
         position: absolute;
         content: '';
@@ -27,28 +28,37 @@
         height: 100%;
         z-index: -1;
 
-        @include m.tablet{
+        @include m.tablet {
             width: 70%;
             filter: blur(20rem) saturate(2);
         }
     }
 }
 
-.app{
+.app {
     margin: 0 auto;
-    width: 95%;
-    @include m.tablet{
-        overflow: scroll;
+    width: 70%;
+
+    @include m.tablet {
+        overflow-y: scroll;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
     }
 }
 
-.barra-admin{
+.barra-admin {
     margin-bottom: 2rem;
-    @include m.tablet{
+
+    @include m.tablet {
         display: flex;
         justify-content: space-between;
     }
-    a{
+
+    a {
         margin: 0 0 2rem 0;
     }
 }
