@@ -1,7 +1,7 @@
 <table width="100%" align="center">
   <tr>
     <td align="center" valign="middle">
-      <h1>✂️ AppSalon - Sistema de Gestión de Citas</h1>
+      <h1>✂️ AppSalon - Sistema de Gestión de Citas en barbería</h1>
       <p><b>Arquitectura MVC: Fullstack PHP & Optimización de Assets</b></p>
       <hr width="50%" />
       <p>PHP 8 | MySQL | Active Record | SASS | Gulp | JavaScript (Fetch API)</p>
